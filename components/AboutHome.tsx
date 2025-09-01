@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface AboutHomeProps {
   title?: string;
@@ -40,12 +41,12 @@ export default function AboutHome({
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 transform hover:scale-105">
+              <Link href="/about" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 transform hover:scale-105">
                 Learn More
-              </button>
-              <button className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
+              </Link>
+              <Link href="/contact" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
                 Contact Us
-              </button>
+              </Link>
             </div>
           </div>
           
