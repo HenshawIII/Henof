@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from '@/public/crathLogo.png';
+import Logo from '@/public/lgoo.png';
 
 const Footer = () => {
   const navLinks = [
@@ -89,12 +89,12 @@ const Footer = () => {
             <h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase">Contact</h3>
             <ul className="mt-4 space-y-4">
               <li>
-                <p className="text-base text-gray-500">123 Akara Street</p>
-                <p className="text-base text-gray-500">Lagos, Nigeria</p>
+                <p className="text-base text-gray-500">123 Food Street</p>
+                <p className="text-base text-gray-500">Abeokuta, Nigeria</p>
               </li>
               <li>
-                <p className="text-base text-gray-500">Phone: +234 123 456 7890</p>
-                <p className="text-base text-gray-500">Email: info@henoffoods.com</p>
+                <p className="text-base text-gray-500">Phone: +234 803 405 6311</p>
+                <p className="text-base text-gray-500">Email: henoffoods@gmail.com</p>
               </li>
             </ul>
           </div>
