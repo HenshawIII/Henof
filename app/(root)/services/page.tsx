@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import akara from '@/public/akrawomn.jpg';
+import Scrollex from '@/components/scrollex';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -199,6 +200,10 @@ const Services = () => {
             ))}
           </div>
         </motion.div>
+        {/* Scroll Stack */}
+        <div className='hidden xl:block'>
+        <Scrollex/>
+        </div>
       </div>
     </div>
   );

@@ -24,8 +24,8 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative h-full flex items-start  xl:justify-between flex-col xl:flex-row justify-center">
-        <div className="md:text-left flex flex-col items-center md:items-start text-center text-white px-4 md:mt-40">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Henof Foods</h1>
+        <div className="md:text-left flex flex-col items-center md:items-start text-center text-white px-4 md:mt-40 xl:px-11">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 xl:text-8xl">Henof Foods</h1>
           <p className="text-xl md:text-2xl">Bringing you quality meals safe for your health</p>
           <p className="text-xl md:text-2xl">Leading in innovation and quality</p>
           <Link href="/services" className="bg-orange-500 text-white mt-4 px-4 py-2">View Menu</Link> 
