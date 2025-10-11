@@ -58,7 +58,7 @@ export default function FAQ() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-[40px] font-medium text-gray-900 mb-4">
             Frequently Asked Questions
           </h2>
         </div>
@@ -77,7 +77,7 @@ export default function FAQ() {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
-                    <h3 className="text-base sm:text-lg font-medium text-gray-900 pr-4">
+                    <h3 className="text-base  font-medium text-gray-900 pr-4">
                       {item.question}
                     </h3>
                   </div>

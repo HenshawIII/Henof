@@ -1,123 +1,127 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import Logo from '@/public/lgoo.png';
 
 const Footer = () => {
-  const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/contact' },
+  const navigationSections = [
+    {
+      title: 'Home',
+      links: ['Home 1', 'Home 2', 'Home 3']
+    },
+    {
+      title: 'Company',
+      links: ['About us', 'Our Team', 'Pricing', 'Testimonials']
+    },
+    {
+      title: 'Services',
+      links: ['Climate-Resilient Program', 'Technology integration', 'Organic practices', 'Supply chain support', 'Sustainable irrigation']
+    },
+    {
+      title: 'Information',
+      links: ['Blog', 'FAQ', 'Gallery']
+    }
   ];
 
   const socialLinks = [
-    {
-      name: 'Facebook',
-      href: '#',
-      icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
     {
       name: 'Instagram',
       href: '#',
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M12.315 2c2.43 0 2.784.013 3.808.09 1.064.077 1.791.232 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.233.636.388 1.363.465 2.427.077 1.067.09 1.407.09 4.123v.08c0 2.643-.012 2.987-.09 4.043-.077 1.064-.232 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.233-1.363.388-2.427.465-1.067.077-1.407.09-4.123.09h-.08c-2.643 0-2.987-.012-4.043-.09-1.064-.077-1.791-.232-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.233-.636-.388-1.363-.465-2.427-.077-1.024-.087-1.379-.087-4.808v-.08c0-2.43.013-2.784.09-3.808.077-1.064.232-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.233 1.363-.388 2.427-.465C8.901 2.013 9.256 2 11.685 2h.08zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-            clipRule="evenodd"
-          />
+          <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.004 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.418-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.928.875 1.418 2.026 1.418 3.323s-.49 2.448-1.418 3.244c-.875.807-2.026 1.297-3.323 1.297zm7.83-9.281c-.49 0-.928-.175-1.297-.49-.368-.315-.49-.753-.49-1.243s.122-.928.49-1.243c.369-.315.807-.49 1.297-.49s.928.175 1.297.49c.368.315.49.753.49 1.243s-.122.928-.49 1.243c-.369.315-.807.49-1.297.49z"/>
         </svg>
       ),
     },
     {
-      name: 'Twitter',
+      name: 'YouTube',
       href: '#',
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      ),
+    },
+    {
+      name: 'Facebook',
+      href: '#',
+      icon: (props: any) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
         </svg>
       ),
     },
   ];
 
   return (
-    <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo and Description */}
-          <div className="hidden  md:col-span-2">
-            <Link href="/" className="flex items-center">
-              <Image
-                src={Logo}
-                alt="Logo"
-                width={40}
-                height={40}
-                className="h-8 w-auto"
-              />
-              <span className="ml-2 text-xl font-bold text-orange-500">Henof Foods</span>
-            </Link>
-            <p className="mt-4 text-gray-500 text-sm">
-              Delivering the finest Akara experience with quality ingredients and authentic recipes.
+    <footer className="bg-white">
+      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          {/* Left Section - Logo and Tagline */}
+          <div className="lg:col-span-2">
+            {/* Logo */}
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                <img src='lgoo.png' alt=''/>
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900">Henof Foods</h2>
+                {/* <span className="text-xs text-gray-500">®</span> */}
+              </div>
+            </div>
+            
+            {/* Tagline */}
+            <p className="text-gray-600 text-[16px] tracking-tight mb-8">
+              Redefining agriculture at a global scale.
             </p>
-          </div>
-
-          {/* Navigation Links */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase">Navigation</h3>
-            <ul className="mt-4 space-y-4">
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-base text-gray-500 hover:text-orange-500">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase">Contact</h3>
-            <ul className="mt-4 space-y-4">
-              <li>
-                <p className="text-base text-gray-500">123 Food Street</p>
-                <p className="text-base text-gray-500">Abeokuta, Nigeria</p>
-              </li>
-              <li>
-                <p className="text-base text-gray-500">Phone: +234 803 405 6311</p>
-                <p className="text-base text-gray-500">Email: henoffoods@gmail.com</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Social Links and Copyright */}
-        <div className="mt-12 border-t border-gray-200 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-base text-gray-400">
-              &copy; {new Date().getFullYear()} Henof Foods. All rights reserved.
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              {socialLinks.map((item) => (
+            
+            {/* Social Media Links */}
+            <div className="flex space-x-4">
+              {socialLinks.map((social) => (
                 <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-400 hover:text-orange-500"
+                  key={social.name}
+                  href={social.href}
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors duration-200"
                 >
-                  <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-6 w-6" aria-hidden="true" />
+                  <social.icon className="w-5 h-5 text-orange-500" />
+                  <span className="text-sm font-medium text-gray-700">{social.name}</span>
                 </a>
               ))}
             </div>
+          </div>
+          
+          {/* Right Section - Navigation Links */}
+          <div className="lg:col-span-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 tracking-tight">
+              {navigationSections.map((section) => (
+                <div key={section.title}>
+                  <h3 className="text-[16px] font-semibold text-gray-900 mb-4">{section.title}</h3>
+                  <ul className="space-y-3">
+                    {section.links.map((link) => (
+                      <li key={link}>
+                        <Link href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-200">
+                          {link}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        
+        {/* Bottom Section */}
+        <div className="mt-16 pt-8 border-t border-gray-200">
+          <div className="flex flex-col lg:flex-row justify-between items-center">
+            {/* Copyright */}
+            <div className="flex items-center space-x-4 mb-4 lg:mb-0">
+              <p className="text-gray-500">
+                ©Henof Foods. All Rights Reserved.2025
+              </p>
+        
+            </div>
+            
+           
           </div>
         </div>
       </div>

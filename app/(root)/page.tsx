@@ -4,6 +4,12 @@ import Product from '@/components/Product'
 import Contact from '@/components/Contact'
 import AboutHome from '@/components/AboutHome'
 import FAQ from '@/components/FAQ'
+import Numbrs from '@/components/Numbrs'
+import Sust from "@/components/sust"
+import Choose from '@/components/choose'
+import CEO from '@/components/ceo'
+import Testimoni from '@/components/testimoni'
+import CTA from '@/components/CTA'
 
 export default function Home() {
 
@@ -13,8 +19,13 @@ export default function Home() {
     <main>
       <Hero />
       <AboutHome />
-      <Product />
-      <Contact />
+      <Numbrs />
+      <Sust/>
+      <Choose/>
+      <CEO/>
+      <Testimoni/>
+      <CTA/>
+      
       <FAQ />
     </main>
   )

@@ -1,0 +1,139 @@
+import React from 'react';
+
+const Numbrs = () => {
+  return (
+    <div className="bg-white xl:pt-32 pt-16  px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   gap-8">
+          {/* First Statistic - On-time delivery rate */}
+          <div className="text-center lg:text-left max-w-md space-y-4">
+            <div className="flex lg:justify-start justify-center mb-4">
+            <img src="/svg.svg" alt="check" className="w-4 h-4" />
+            </div>
+            <div className="text-6xl md:text-7xl font-medium text-black mb-2">98%</div>
+            <div className="text-xl font-semibold text-black mb-3">On-time delivery rate</div>
+            <div className="text-gray-600 text-sm leading-relaxed max-w-sm">
+              Efficient distribution across regions, supporting supply chains with reliability and precision.
+            </div>
+          </div>
+
+          {/* Second Statistic - Countries reached */}
+          <div className="lg:text-left text-center max-w-md space-y-4">
+            <div className="flex lg:justify-start justify-center mb-4">
+            <img src="/svg.svg" alt="check" className="w-4 h-4" />
+            </div>
+            <div className="md:text-7xl text-6xl font-medium text-black mb-2">15</div>
+            <div className="text-xl font-semibold text-black mb-3">Countries reached</div>
+            <div className="text-gray-600 text-sm leading-relaxed max-w-sm">
+              Our agricultural solutions are trusted by partners and farmers in more than 15 countries worldwide.
+            </div>
+          </div>
+
+          {/* Third Statistic - Acres cultivated sustainably */}
+          <div className="lg:text-left md:col-span-2 lg:col-span-1 col-span-1 mx-auto text-center space-y-4">
+            <div className="flex lg:justify-start justify-center mb-4">
+            <img src="/svg.svg" alt="check" className="w-4 h-4" />
+            </div>
+            <div className="text-6xl md:text-7xl font-medium text-black mb-2">500k+</div>
+            <div className="text-xl font-semibold text-black mb-3">Acres cultivated sustainably</div>
+            <div className="text-gray-600 text-sm  leading-relaxed max-w-sm">
+              We promote responsible land use with eco-friendly practices across half a million acres of farmland.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white lg:py-24 xl:pt-44 md:pt-24 py-16 px-2">
+        <div className="">
+          <div className="grid grid-cols-1 xl:grid-cols-6 gap-12 items-center">
+            {/* Left Column - Textual Content */}
+            <div className="space-y-6 flex flex-col items-center xl:items-start xl:col-span-2 xl:pl-24 md:pb-12">
+              {/* Tag with green background */}
+              <div className="inline-flex items-center gap-2 bg-white border-[1.5px] border-gray-400/30 px-4 py-2 rounded-full text-sm font-medium">
+                <img src="/usryl.svg" alt="Tag" className="w-3 h-3" />
+                Our solutions
+              </div>
+              
+              {/* Main heading */}
+              <h2 className="text-4xl md:max-w-[80%] tracking-normal text-center md:text-left font-medium text-black leading-tight">
+                Innovating the way you grow.
+              </h2>
+              
+              {/* Description paragraph */}
+              <p className="text-gray-600 text-center lg:text-left text-[16px]  leading-relaxed max-w-sm">
+                We deliver end-to-end agricultural solutions that combine traditional farming wisdom with modern innovation.
+              </p>
+              
+              {/* CTA Button */}
+              <button className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                <img src="/usericon.svg" alt="" />
+                Discover our solutions
+              </button>
+            </div>
+
+            {/* Right Column - Three Vertical Cards */}
+            <div className="gap-2 xl:col-span-4 relative flex flex-col md:flex-row">
+                <div className='absolute inset-0 w-[105%] xl:w-[80%] left-1/2 -translate-x-1/2 xl:h-[140%] h-[105%] top-1/2 -translate-y-1/2 bg-[#fafafa]  rounded-lg '>
+
+                </div>
+              {/* Card 1 - Precision farming */}
+              <div className="relative lg:w-[45vw] md:w-[33vw] md:h-[28vh] lg:h-[30vh] xl:h-[50vh] h-[40vh] bg-gray-800 rounded-lg overflow-hidden">
+                <img 
+                  src="/akara1.jpg" 
+                  alt="Precision farming" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute group top-4 left-4 hover:bg-orange-500 w-8 h-8 bg-gray-50 rounded-full flex items-center justify-center">
+                  <span className="text-orange-500 group-hover:rotate-90 transition-all group-hover:text-white duration-300 text-lg font-bold">+</span>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2">Precision farming</h3>
+                  <p className="text-white text-sm leading-relaxed">
+                    We use data-driven insights and smart technology to help farmers monitor soil health.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2 - Sustainable irrigation */}
+              <div className="relative lg:w-[45vw] md:w-[33vw] md:h-[28vh] lg:h-[30vh] xl:h-[50vh] h-[40vh] bg-gray-800 rounded-lg overflow-hidden">
+                <img 
+                  src="/akara2.jpg" 
+                  alt="Sustainable irrigation" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute group top-4 left-4 hover:bg-orange-500 w-8 h-8 bg-gray-50 rounded-full flex items-center justify-center">
+                  <span className="text-orange-500 group-hover:rotate-90 transition-all group-hover:text-white duration-300 text-lg font-bold">+</span>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2">Sustainable irrigation</h3>
+                  <p className="text-white text-sm leading-relaxed">
+                    Our advanced irrigation systems reduce water waste and support efficient crop hydration.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3 - Supply chain support */}
+              <div className="relative lg:w-[45vw] md:w-[33vw] md:h-[28vh] lg:h-[30vh] xl:h-[50vh] h-[40vh] bg-gray-800 rounded-lg overflow-hidden">
+                <img 
+                  src="/akara3.jpg" 
+                  alt="Supply chain support" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute group top-4 left-4 hover:bg-orange-500 w-8 h-8 bg-gray-50 rounded-full flex items-center justify-center">
+                  <span className="text-orange-500 group-hover:rotate-90 transition-all group-hover:text-white duration-300 text-lg font-bold">+</span>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2">Supply chain support</h3>
+                  <p className="text-white text-sm leading-relaxed">
+                    We provide tools and expertise to streamline post-harvest logistics, ensuring fresh, high-quality products.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Numbrs;
