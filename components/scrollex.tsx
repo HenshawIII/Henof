@@ -2,8 +2,8 @@ import ScrollStack, { ScrollStackItem } from './ScrollStack'
 
 export default function Scrollex() {
   return (
-    <div className=" w-[80%] md:w-[50%] mx-auto border-orange-500 border-l-[.2px] border-r-[.2px]">
-      <ScrollStack className="max-h-screen">
+    <div className=" w-[80%] md:w-[50%] mx-auto ">
+      <ScrollStack className="h-[50vh] overflow-y-hidden">
         <ScrollStackItem>
           <div className="bg-gradient-to-br from-orange-400 to-orange-600 text-white p-8 rounded-lg shadow-lg">
             <h2 className="text-3xl font-bold mb-4">Akara Special</h2>

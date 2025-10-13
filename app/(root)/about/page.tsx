@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import akara from '@/public/akrawomn.jpg';
+import CTA from '@/components/CTA';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -53,7 +54,7 @@ const About = () => {
           src={akara}
           alt="About Us"
           fill
-          className="object-cover"
+          className="object-cover "
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <motion.h1 
@@ -192,13 +193,13 @@ const About = () => {
             >
               <div className="relative h-48 w-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
-                  src={"/FolakeMi.jpg"}
+                  src={"/Found1.avif"}
                   alt="Team Member"
                   fill
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Prof FO Henshaw</h3>
+              <h3 className="text-xl font-semibold text-gray-900">FO Henshaw</h3>
               <p className="text-orange-600">CEO & Founder</p>
             </motion.div>
             <motion.div 
@@ -215,7 +216,7 @@ const About = () => {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Utibe Henshaw</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Utibe Teju</h3>
               <p className="text-orange-600">Project Manager</p>
             </motion.div>
             <motion.div 
@@ -232,11 +233,12 @@ const About = () => {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Adeoluwa Henshaw</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Mr Grafiki</h3>
               <p className="text-orange-600">Creative Director</p>
             </motion.div>
           </div>
         </motion.div>
+        <CTA/>
       </div>
     </div>
   );

@@ -1,5 +1,10 @@
 "use client";
 import React from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 type Testimonial = {
   quote: string;
@@ -11,40 +16,40 @@ type Testimonial = {
 
 const TESTIMONIALS: Testimonial[] = [
   {
-    quote: "Their consistency, quality, and eco-friendly practices are unmatched in the industry.",
-    name: "Fred Anderson",
-    avatar: "/FolakeMi.jpg",
+    quote: "Henof Beans has become a staple in my kitchen. It cooks fast, tastes fresh, and you can tell it’s properly cleaned and sorted. Quality like this is rare these days",
+    name: "Chiamaka o.",
+    avatar: "/chid.avif",
     bg: "#fafafa", // emerald-800-like
     color: "#111111",
   },
   {
     quote:
-      "Their sustainable practices give us a competitive edge and make our brand story stronger.",
-    name: "Noah Kim",
-    avatar: "/Flouri.png",
+      "As a restaurant owner, consistency matters to me. Henof Foods delivers every time — clean packaging, reliable taste, and my customers love it",
+    name: "Bode Akeem",
+    avatar: "/Bode.avif",
     bg: "#111827", // gray-900
     color: "#FFFFFF",
   },
   {
     quote:
-      "We've observed tangible enhancements in both the quality of our crops and our operational efficiency since collaborating with them.",
-    name: "Jaycee Wilkins",
-    avatar: "/akara1.jpg",
+      "I switched to Henof because I wanted food that feels truly Nigerian and trustworthy. You can taste the difference.",
+    name: "Mariam Tinu",
+    avatar: "/Mar.avif",
     bg: "#fafafa",
     color: "#111111",
   },
   {
     quote:
-      "We’ve experienced remarkable enhancements in both the quality of our crops and the efficiency of our workflows.",
+      "I appreciate how Henof supports local farmers. Knowing that my food is helping other families makes every meal more meaningful.",
     name: "Sammy Moore",
-    avatar: "/akrawomn.jpg",
+    avatar: "/Sam.avif",
     bg: "#F97316",
     color: "#ffffff",
   },
   {
     quote:
-      "Since teaming up with them, we've experienced remarkable enhancements in crop quality and the efficiency of our operations!",
-    name: "Roman Sumner",
+      "Their products are well packaged and easy to store. I use the beans and flour regularly, and the quality has been consistent from the first purchase.",
+    name: "Dan Ade",
     avatar: "/DgTal.jpg",
     bg: "#FFFFFF",
     color: "#111111",
@@ -52,9 +57,9 @@ const TESTIMONIALS: Testimonial[] = [
  
   {
     quote:
-      "Outstanding traceability and partner support. We can count on consistent quality and timely deliveries.",
-    name: "Gianna Patel",
-    avatar: "/Flourii.png",
+      "Henof Foods reminds us of home. It’s the same taste we grew up with, just cleaner, fresher, and beautifully presented. Our family loves it",
+    name: "Ngozi O.",
+    avatar: "/Ngz.avif",
     bg: "#F3F4F6", // gray-100
     color: "#111111",
   },
@@ -63,8 +68,57 @@ const TESTIMONIALS: Testimonial[] = [
 
 const Testimoni = () => {
   const scrollerRef = React.useRef<HTMLDivElement | null>(null);
+  const containerRef = React.useRef<HTMLDivElement | null>(null);
   const [isAtStart, setIsAtStart] = React.useState(true);
   const [isAtEnd, setIsAtEnd] = React.useState(false);
+
+  useGSAP(() => {
+    const ctx = gsap.context(() => {
+      // Set initial state for text elements
+      gsap.set('.animate-testimonial-text', {
+        y: 60,
+        opacity: 0
+      });
+
+      // Set initial state for testimonials scroll
+      gsap.set('.animate-testimonials-scroll', {
+        x: 100,
+        opacity: 0
+      });
+
+      // Animate text elements sliding up
+      gsap.to('.animate-testimonial-text', {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 60%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+      // Animate testimonials scroll sliding in from right
+      gsap.to('.animate-testimonials-scroll', {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 60%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, { scope: containerRef });
 
   const scrollByAmount = (amount: number) => {
     if (!scrollerRef.current) return;
@@ -119,24 +173,24 @@ const Testimoni = () => {
   }, [checkScrollPosition]);
 
   return (
-    <section className="relative w-full py-20 px-4">
+    <section className="relative w-full py-20 px-4" ref={containerRef} id='testimonials'>
       <div className="max-w-7xl mx-auto">
         {/* Tag */}
-        <div className="inline-flex items-center gap-2 font-medium tracking-tight bg-white border border-gray-200 px-4 py-2 rounded-full text-[16px] text-gray-700 mb-6">
+        <div className="inline-flex items-center gap-2 font-medium tracking-tight bg-white border border-gray-200 px-4 py-2 rounded-full text-[16px] text-gray-700 mb-6 animate-testimonial-text">
           <img src="usryl.svg" alt="" />
           What our partners say
         </div>
 
         {/* Heading + Arrows */}
         <div className=" flex items-end justify-between gap-6 flex-wrap">
-          <h2 className="text-[40px]  font-medium tracking-tight leading-tight max-w-3xl">
+          <h2 className="text-[40px]  font-medium tracking-tight leading-tight max-w-3xl animate-testimonial-text">
             Trusted by farmers &
             <br />
             businesses worldwide.
           </h2>
 
         {/* Nav Buttons */}
-          <div className="absolute bottom-0 md:bottom-[63%] md:right-[8%] flex items-center gap-3 ml-auto">
+          <div className="absolute bottom-0 md:bottom-[63%] md:right-[8%] flex items-center gap-3 ml-auto animate-testimonial-text">
             <button
               aria-label="Previous"
               onClick={() => scrollByAmount(-400)}
@@ -163,7 +217,7 @@ const Testimoni = () => {
         {/* Horizontal Scroll Row */}
         <div
           ref={scrollerRef}
-          className="mt-12 flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-px-4"
+          className="mt-12 flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-px-4 animate-testimonials-scroll"
         >
           {TESTIMONIALS.map((t, i) => (
             <article
@@ -171,7 +225,7 @@ const Testimoni = () => {
               className={`snap-start ${i==0?"lg:w-[50%] w-[50%] md:w-[70%]":"w-[30%]"} shrink-0 rounded-2xl p-8 border border-gray-100 min-h-[260px] flex ${i==0?"flex-col-reverse":"flex-col"} ${i==0?"justify-between":"justify-between"}`}
               style={{ backgroundColor: t.bg, color: t.color, minWidth: "360px" }}
             >
-              <p className="text-xl leading-tight font-medium tracking-tight" style={{ color: t.color }}>
+              <p className={`${i==0?"text-lg lg:text-xl":"text-xl"} leading-tight font-medium tracking-tight`} style={{ color: t.color }}>
                 “{t.quote}”
               </p>
               <div className="mt-8 flex items-center gap-3">

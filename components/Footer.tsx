@@ -3,22 +3,25 @@ import Link from 'next/link';
 
 const Footer = () => {
   const navigationSections = [
-    {
-      title: 'Home',
-      links: ['Home 1', 'Home 2', 'Home 3']
-    },
+    
     {
       title: 'Company',
-      links: ['About us', 'Our Team', 'Pricing', 'Testimonials']
+      links: [
+        { label: 'Home', href: '/' },
+        { label: 'Our Team', href: '/about' },
+        { label: 'About Us', href: '/about' },
+        { label: 'Testimonials', href: '/#testimonials' }
+      ]
     },
     {
       title: 'Services',
-      links: ['Climate-Resilient Program', 'Technology integration', 'Organic practices', 'Supply chain support', 'Sustainable irrigation']
+      links: [
+        { label: 'Product development', href: '/services' },
+        { label: 'Delivery & logistics', href: '/services' },
+        { label: 'Partnerships', href: '/contact' }
+      ]
     },
-    {
-      title: 'Information',
-      links: ['Blog', 'FAQ', 'Gallery']
-    }
+    
   ];
 
   const socialLinks = [
@@ -91,19 +94,21 @@ const Footer = () => {
           
           {/* Right Section - Navigation Links */}
           <div className="lg:col-span-3">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 tracking-tight">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-8 tracking-tight ">
               {navigationSections.map((section) => (
-                <div key={section.title}>
-                  <h3 className="text-[16px] font-semibold text-gray-900 mb-4">{section.title}</h3>
+                <div key={section.title} className='flex justify-start flex-col items-center '>
+                  <div>
+                  <h3 className="text-[16px] font-semibold text-gray-900 mb-4 ">{section.title}</h3>
                   <ul className="space-y-3">
                     {section.links.map((link) => (
-                      <li key={link}>
-                        <Link href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-200">
-                          {link}
+                      <li key={link.label}>
+                        <Link href={link.href} className="text-gray-700 hover:text-orange-600 transition-colors duration-200">
+                          {link.label}
                         </Link>
                       </li>
                     ))}
                   </ul>
+                  </div>
                 </div>
               ))}
             </div>

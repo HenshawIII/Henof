@@ -6,6 +6,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import akara from '@/public/akrawomn.jpg';
 import Scrollex from '@/components/scrollex';
+import CTA from '@/components/CTA';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -28,8 +29,8 @@ const Services = () => {
 
   const services = [
     {
-      title: "Fresh Akara Production",
-      description: "Daily production of fresh, high-quality Akara using premium ingredients and traditional recipes.",
+      title: "Food Production & processing",
+      description: "Daily production of fresh, high-quality food using premium ingredients and traditional recipes.",
       icon: (
         <svg className="w-12 h-12 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -37,7 +38,7 @@ const Services = () => {
       )
     },
     {
-      title: "Bulk Orders",
+      title: "Product packaging & distribution",
       description: "Specialized service for large-scale orders, perfect for events, restaurants, and businesses.",
       icon: (
         <svg className="w-12 h-12 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -46,8 +47,8 @@ const Services = () => {
       )
     },
     {
-      title: "Custom Flavors",
-      description: "Tailored Akara recipes to meet specific taste preferences and dietary requirements.",
+      title: "Farmer partnerships & sourcing",
+      description: "Collaboration with farmers across Nigeria, ensuring fair pricing, consistent supply, and sustainable growing practices",
       icon: (
         <svg className="w-12 h-12 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -174,7 +175,7 @@ const Services = () => {
         </motion.div>
 
         {/* Process Section */}
-        <motion.div 
+        {/* <motion.div 
           ref={processRef}
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -199,11 +200,12 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
         {/* Scroll Stack */}
-        <div className='hidden xl:block'>
+        {/* <div className='hidden xl:block'>
         <Scrollex/>
-        </div>
+        </div> */}
+        <CTA/>
       </div>
     </div>
   );

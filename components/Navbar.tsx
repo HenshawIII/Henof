@@ -79,12 +79,12 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 className={`text-gray-50 hover:text-gray-300 px-3 py-2 text-[16px] font-medium relative ${
-                  isActive(link.href) ? 'text-orange-500' : ''
+                  isActive(link.href) ?  isScrolled ? 'text-orange-50' : 'text-orange-500':""
                 }`}
               >
                 {link.name}
                 {isActive(link.href) && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500"></span>
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 ${isScrolled  ? "bg-orange-50":"bg-orange-500"}`}></span>
                 )}
               </Link>
             ))}
@@ -94,7 +94,7 @@ const Navbar = () => {
             {/* <div className="w-2 h-2 bg-orange-50 rounded-full"></div> */}
             <img src="/usericon.svg" alt="User" className="w-3 h-3 group-hover:hidden transition-opacity duration-300" />
             <img src="/usryl.svg" alt="User" className="w-3 h-3 hidden group-hover:block transition-opacity duration-300" />
-            <Link href="/login" className=" group-hover:text-gray-900 transition-transform duration-300 ">
+            <Link href="/contact" className=" group-hover:text-gray-900 transition-transform duration-300 ">
               Lets work together</Link>
           </div>
 

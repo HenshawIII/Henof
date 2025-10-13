@@ -1,6 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface FAQItem {
   id: number;
@@ -11,39 +16,71 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    id: 1,
-    question: "What is Akara and how is it made?",
-    answer: "Akara is a traditional Nigerian bean cake made from black-eyed peas. We soak the beans, remove the skin, blend them with onions, peppers, and spices, then deep-fry in palm oil until golden brown. Our recipe has been passed down through generations."
+    "id": 1,
+    "question": "What products does Henof Foods offer?",
+    "answer": "Henof Foods produces and packages a range of locally sourced Nigerian staples, including beans, garri, flours, grains, and spices. All our products are 100% natural and processed under hygienic conditions to preserve freshness and nutrition."
+  },
+
+  {
+    "id": 3,
+    "question": "Do you supply to restaurants, hotels, and retailers?",
+    "answer": "Yes! We provide bulk and wholesale supply to restaurants, hotels, caterers, and retail outlets. Our products are packaged to meet both household and commercial needs. Contact our sales team to discuss partnership options or bulk pricing."
   },
   {
-    id: 2,
-    question: "What are your delivery areas and times?",
-    answer: "We deliver within Akara and surrounding areas within a 15km radius. Delivery times are typically 30-45 minutes from order confirmation. We operate Monday to Saturday from 6:00 AM to 8:00 PM, and Sundays from 8:00 AM to 6:00 PM."
+    "id": 4,
+    "question": "How can I buy your products?",
+    "answer": "You can purchase Henof Foods products through our official distributors, retail partners, or directly from us. Online ordering and nationwide delivery options are also available. For direct orders, please reach out via our contact page or customer care line."
   },
   {
-    id: 3,
-    question: "Do you offer bulk orders or catering services?",
-    answer: "Yes! We provide bulk orders for events, parties, and corporate functions. We offer special pricing for orders over 50 pieces and can accommodate large events with advance notice. Contact us at least 24 hours in advance for bulk orders."
+    "id": 5,
+    "question": "Are Henof Foods products organic or preservative-free?",
+    "answer": "Yes. Our products are 100% natural, free from artificial preservatives, additives, or colorings. We focus on clean, safe, and healthy food production practices that preserve the authentic taste of Nigerian staples."
   },
   {
-    id: 4,
-    question: "How do I place an order?",
-    answer: "You can place orders through our website, call us directly, or visit our main location. We accept cash on delivery, bank transfers, and mobile money payments. Online orders can be placed 24/7, and we'll confirm your order within 15 minutes."
+    "id": 8,
+    "question": "Does Henof Foods offer private label or co-branding opportunities?",
+    "answer": "Yes. We partner with retailers, supermarkets, and food businesses that want to sell locally sourced products under their own brand. Our private label service includes product processing, packaging, and quality assurance — all handled to meet your brand standards."
   },
   {
-    id: 5,
-    question: "Are your products suitable for vegetarians?",
-    answer: "Yes! Our traditional akara is completely vegetarian and vegan-friendly. We use only plant-based ingredients - no animal products are used in our preparation process. However, we do use palm oil, so please inform us if you have any specific dietary restrictions."
-  },
-  {
-    id: 6,
-    question: "What is your refund policy?",
-    answer: "We guarantee the quality of our products. If you're not satisfied with your order, please contact us within 2 hours of delivery. We'll provide a full refund or replacement. For bulk orders, we require notification within 1 hour of delivery."
+    "id": 9,
+    "question": "How can I become a distributor or business partner?",
+    "answer": "We welcome partnerships with distributors, wholesalers, and corporate buyers who share our vision for promoting quality Nigerian food. Simply reach out through our 'Contact' page or email our partnerships team. We’ll guide you through the onboarding and distribution process."
   }
-];
+  
+]
+
 
 export default function FAQ() {
   const [openItems, setOpenItems] = useState<number[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const ctx = gsap.context(() => {
+      // Set initial state for FAQ elements
+      gsap.set('.animate-faq', {
+        y: 10,
+        opacity: 0
+      });
+
+      // Animate FAQ elements sliding up
+      gsap.to('.animate-faq', {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 60%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none none'
+        }
+      });
+
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, { scope: containerRef });
 
   const toggleItem = (id: number) => {
     setOpenItems(prev => 
@@ -54,11 +91,11 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50" ref={containerRef}>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-[40px] font-medium text-gray-900 mb-4">
+          <h2 className="text-[40px] font-medium text-gray-900 mb-4 animate-faq">
             Frequently Asked Questions
           </h2>
         </div>
@@ -68,11 +105,11 @@ export default function FAQ() {
           {faqData.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
+              className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden animate-faq"
             >
               <button
                 onClick={() => toggleItem(item.id)}
-                className="w-full px-5 py-4 text-left focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-inset"
+                className="w-full px-5 py-4 text-left focus:outline-none  "
                 aria-expanded={openItems.includes(item.id)}
               >
                 <div className="flex items-center justify-between">
