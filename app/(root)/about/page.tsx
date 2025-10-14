@@ -6,6 +6,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import akara from '@/public/akrawomn.jpg';
 import CTA from '@/components/CTA';
+import History from '@/components/history';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -78,10 +79,10 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Welcome to Henof Foods</h2>
-            <p className="text-gray-600 mb-4">
-              At Henof Foods, we are passionate about delivering the finest quality indigenous foods in convenient and affordable packages to our customers. Our journey began with a simple mission: to provide healthy, delicious, and convenient food options that bring joy to every table.
+            <p className="text-gray-600 mb-4 text-[16px]">
+              We are passionate about delivering the finest quality indigenous foods in convenient and affordable packages to our customers. Our journey began with a simple mission: to provide healthy, delicious, and convenient food options that bring joy to every table.
             </p>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-[16px]">
               With years of experience and a commitment to excellence, we have become a trusted name in the food industry, known for our dedication to quality, innovation, and customer satisfaction.
             </p>
           </motion.div>
@@ -101,7 +102,7 @@ const About = () => {
         </div>
 
         {/* Mission & Vision */}
-        <div ref={missionRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div ref={missionRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
           <motion.div 
             className="bg-orange-50 p-8 rounded-lg"
             initial={{ opacity: 0, y: 20 }}
@@ -110,7 +111,7 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold text-orange-600 mb-4">Our Mission</h3>
             <p className="text-gray-600">
-              To provide high-quality, nutritious, and delicious food products that enhance the lives of our customers while maintaining the highest standards of food safety and quality.
+            To deliver premium-quality, locally sourced food products that promote healthy living, empower farmers, and strengthen Nigeria’s food system
             </p>
           </motion.div>
           <motion.div 
@@ -121,56 +122,12 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold text-orange-600 mb-4">Our Vision</h3>
             <p className="text-gray-600">
-              To be the leading provider of quality food products in Nigeria, recognized for our commitment to excellence, innovation, and customer satisfaction.
+            To become Africa’s most trusted name in natural food production — rooted in quality, community, and sustainability
             </p>
           </motion.div>
         </div>
-
-        {/* Values */}
-        <motion.div 
-          ref={valuesRef}
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Core Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div 
-              className="p-6 bg-white rounded-lg shadow-md"
-              initial={{ opacity: 0, x: -50 }}
-              animate={valuesInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              <h3 className="text-xl font-semibold text-orange-600 mb-3">Quality</h3>
-              <p className="text-gray-600">
-                We maintain the highest standards in everything we do, from ingredient selection to final product delivery.
-              </p>
-            </motion.div>
-            <motion.div 
-              className="p-6 bg-white rounded-lg shadow-md"
-              initial={{ opacity: 0, y: 20 }}
-              animate={valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-            >
-              <h3 className="text-xl font-semibold text-orange-600 mb-3">Innovation</h3>
-              <p className="text-gray-600">
-                We continuously explore new ways to improve our products and services to meet evolving customer needs.
-              </p>
-            </motion.div>
-            <motion.div 
-              className="p-6 bg-white rounded-lg shadow-md"
-              initial={{ opacity: 0, x: 50 }}
-              animate={valuesInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-            >
-              <h3 className="text-xl font-semibold text-orange-600 mb-3">Integrity</h3>
-              <p className="text-gray-600">
-                We operate with honesty and transparency, building trust with our customers and stakeholders.
-              </p>
-            </motion.div>
-          </div>
-        </motion.div>
+      <History/>
+        
 
         {/* Team Section */}
         <motion.div 

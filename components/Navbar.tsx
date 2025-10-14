@@ -102,7 +102,7 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-50 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
             >
               <span className="sr-only">Open main menu</span>
               {!isSidebarOpen ? (
@@ -150,8 +150,8 @@ const Navbar = () => {
       <div
         ref={sidebarRef}
         className={`${
-          isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
-        } lg:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out`}
+          isSidebarOpen ? 'translate-y-0' : '-translate-y-full'
+        } lg:hidden fixed top-0 left-0 right-0 w-[95%] mx-auto rounded-lg bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out`}
       >
         {/* Close button */}
         <div className="flex justify-end p-4">

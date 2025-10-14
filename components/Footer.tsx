@@ -78,12 +78,12 @@ const Footer = () => {
             </p>
             
             {/* Social Media Links */}
-            <div className="flex space-x-4">
+            <div className="grid md:grid-cols-3 grid-cols-2 max-w-md gap-1 ">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors duration-200"
+                  className="flex  items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors duration-200"
                 >
                   <social.icon className="w-5 h-5 text-orange-500" />
                   <span className="text-sm font-medium text-gray-700">{social.name}</span>

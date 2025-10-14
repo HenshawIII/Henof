@@ -69,7 +69,7 @@ const Choose = () => {
         return () => ctx.revert();
     }, { scope: containerRef });
 	return (
-		<div className="bg-white pt-24 pb-18 mb-20 px-4" >
+		<div className="bg-white lg:pt-24 py-12 lg:pb-18 mb-2 lg:mb-20 px-4" >
 			<div className="max-w-6xl mx-auto text-center">
 				{/* Tag */}
 				<div ref={contain2}>

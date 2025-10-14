@@ -29,7 +29,7 @@ const CTA = () => {
           trigger: containerRef.current,
           start: 'top 60%',
           end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
+          toggleActions: 'play none none none'
         }
       });
 
@@ -74,7 +74,7 @@ const CTA = () => {
             </div>
             
             {/* Right Content - Keywords */}
-            <div className="flex order-1 lg:order-2 flex-col items-start lg:items-end justify-end h-full space-y-6">
+            <div className="flex order-1 lg:order-2 lg:mb-6 flex-col items-start lg:items-end justify-end h-full space-y-6">
               <div className="flex gap-6 w-full max-w-md animate-cta-text">
                 {/* Driven */}
                 <div className="flex items-center gap-4 ">

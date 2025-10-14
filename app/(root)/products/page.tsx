@@ -3,39 +3,7 @@ import Link from 'next/link';
 
 // Product data - you can expand this with more products
 const products = [
-  {
-    id: 1,
-    name: "Akara (Bean Cakes)",
-    description: "Traditional Nigerian bean cakes made from black-eyed peas, deep-fried to perfection. A popular breakfast and snack item.",
-    price: "₦200",
-    image: "/akara1.jpg",
-    category: "Breakfast",
-    inStock: true,
-    rating: 4.8,
-    reviews: 127
-  },
-  {
-    id: 2,
-    name: "Akara Special Mix",
-    description: "Premium akara made with a special blend of spices and herbs, giving it a unique and flavorful taste.",
-    price: "₦250",
-    image: "/akara2.jpg",
-    category: "Breakfast",
-    inStock: true,
-    rating: 4.9,
-    reviews: 89
-  },
-  {
-    id: 3,
-    name: "Traditional Akara",
-    description: "Classic akara recipe passed down through generations, maintaining authentic Nigerian taste and texture.",
-    price: "₦180",
-    image: "/akara3.jpg",
-    category: "Breakfast",
-    inStock: true,
-    rating: 4.7,
-    reviews: 156
-  },
+  
   {
     id: 4,
     name: "Akara Flour",
@@ -50,7 +18,7 @@ const products = [
   {
     id: 5,
     name: "Moi Moi Flour",
-    description: "Authentic spice blend for making traditional moi moi with the perfect balance of flavors.",
+    description: "Authentic beans for making traditional moi moi with the perfect balance of nutrients.",
     price: "₦800",
     image: "/Flourii.png",
     category: "Ingredients",
@@ -77,7 +45,7 @@ export default function ProductsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center bg-no-repeat py-20" style={{ backgroundImage: 'url(/akara1.jpg)' }}>
+      <section className="relative bg-cover bg-center bg-no-repeat py-40" style={{ backgroundImage: 'url(/akara1.jpg)' }}>
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         
@@ -118,7 +86,7 @@ export default function ProductsPage() {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden"
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform  overflow-hidden"
               >
                 {/* Product Image */}
                 <div className="relative h-64 w-full overflow-hidden">
@@ -134,16 +102,14 @@ export default function ProductsPage() {
                       Out of Stock
                     </div>
                   )}
-                  <div className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {product.category}
-                  </div>
+                 
                 </div>
 
                 {/* Product Info */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-xl font-bold text-gray-900">{product.name}</h3>
-                    <span className="text-2xl font-bold text-orange-600">{product.price}</span>
+                    <h3 className="text-xl font-[600] text-gray-900">{product.name}</h3>
+                    <span className="text-lg font-[600] text-orange-600">{product.price}</span>
                   </div>
                   
                   <p className="text-gray-600 mb-4 line-clamp-3">{product.description}</p>
