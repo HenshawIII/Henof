@@ -64,9 +64,9 @@ const CEO = () => {
 
           <div className="mt-12 flex flex-col lg:flex-row justify-between gap-6 lg:items-end items-start md:p-2">
             <h3 className="text-3xl lg:text-5xl xl:text-7xl font-semibold tracking-tight">
-              Folake
+              Victoria
               <br />
-               Henshaw
+               Imafidon
             </h3>
 
             <Link href="/about">

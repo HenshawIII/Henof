@@ -130,7 +130,7 @@ const About = () => {
         
 
         {/* Team Section */}
-        <motion.div 
+        {/* <motion.div 
           ref={teamRef}
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -194,7 +194,7 @@ const About = () => {
               <p className="text-orange-600">Creative Director</p>
             </motion.div>
           </div>
-        </motion.div>
+        </motion.div> */}
         <CTA/>
       </div>
     </div>
